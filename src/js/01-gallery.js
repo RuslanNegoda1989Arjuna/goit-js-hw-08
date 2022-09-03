@@ -24,17 +24,6 @@ function makeGalleryMarkup(gallery) {
     .join('');
 }
 
-// divGallery.addEventListener('click', onBigImage);
-
-// function onBigImage(evt) {
-//   evt.preventDefault();
-
-//   if (evt.target.nodeName !== 'IMG') {
-//     return;
-//   }
-
-// }
-
 var lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
