@@ -43,9 +43,6 @@ function populateInput() {
 function onSubmit(evt) {
   evt.preventDefault();
 
-  // const inputName = evt.target.name;
-  // const inputValue = evt.target.value;
-
   submitInput = {
     Message: textareaEl.value,
     Email: formEl.elements.email.value,
