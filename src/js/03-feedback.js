@@ -7,7 +7,7 @@ const STORAGE_KEY = 'feedback-form-state';
 
 let formData = {};
 
-formEl.addEventListener('input', throttle(onEmailMessageSave, 250));
+formEl.addEventListener('input', throttle(onEmailMessageSave, 500));
 formEl.addEventListener('submit', onSubmit);
 
 populateInput();
@@ -26,8 +26,10 @@ function onEmailMessageSave(evt) {
 }
 
 // Заповнення збереженого в локалст.
+
 function populateInput() {
   const saveInput = localStorage.getItem(STORAGE_KEY);
+
   const parsSaveInput = JSON.parse(saveInput);
 
   if (saveInput) {
