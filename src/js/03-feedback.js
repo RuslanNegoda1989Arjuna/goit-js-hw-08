@@ -16,11 +16,15 @@ populateInput();
 function onEmailMessageSave(evt) {
   evt.preventDefault();
 
-  const inputName = evt.target.name;
-  const inputValue = evt.target.value;
+  // const inputName = evt.target.name;
+  // const inputValue = evt.target.value;
 
-  formData[inputName] = inputValue;
-  // console.log(formData);
+  // formData[inputName] = inputValue;
+
+  const emailInput = formEl.elements.email.value;
+  const messageInput = textareaEl.value;
+
+  formData = { email: emailInput, message: messageInput };
 
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 }
@@ -41,6 +45,7 @@ function populateInput() {
 
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 }
+
 // Ф-ція Сабміту
 function onSubmit(evt) {
   evt.preventDefault();
