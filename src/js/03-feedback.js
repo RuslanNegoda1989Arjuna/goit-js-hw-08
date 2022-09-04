@@ -35,14 +35,11 @@ function populateInput() {
     formEl.elements.email.value = parsSaveInput.email || '';
   }
 
-  // const formDataSave = parsSaveInput;
-  // formData = parsSaveInput;
+  formData = parsSaveInput;
 
-  // localStorage.setItem(STORAGE_KEY, JSON.stringify(formDataSave));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 }
-
 // Ф-ція Сабміту
-
 function onSubmit(evt) {
   evt.preventDefault();
 
