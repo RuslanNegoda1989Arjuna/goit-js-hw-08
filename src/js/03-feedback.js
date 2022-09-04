@@ -35,9 +35,10 @@ function populateInput() {
     formEl.elements.email.value = parsSaveInput.email || '';
   }
 
-  formData = parsSaveInput;
+  // const formDataSave = parsSaveInput;
+  // formData = parsSaveInput;
 
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+  // localStorage.setItem(STORAGE_KEY, JSON.stringify(formDataSave));
 }
 
 // Ф-ція Сабміту
