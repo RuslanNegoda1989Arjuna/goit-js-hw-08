@@ -16,11 +16,6 @@ populateInput();
 function onEmailMessageSave(evt) {
   evt.preventDefault();
 
-  // const inputName = evt.target.name;
-  // const inputValue = evt.target.value;
-
-  // formData[inputName] = inputValue;
-
   const emailInput = formEl.elements.email.value;
   const messageInput = textareaEl.value;
 
@@ -29,32 +24,28 @@ function onEmailMessageSave(evt) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 }
 
-// Заповнення збереженого в локалст.
+// Заповнення збереженого в локалст + заповнення полів.
 
 function populateInput() {
   const saveInput = localStorage.getItem(STORAGE_KEY);
 
-  const parsSaveInput = JSON.parse(saveInput);
-
   if (saveInput) {
+    const parsSaveInput = JSON.parse(saveInput);
     textareaEl.value = parsSaveInput.message || '';
     formEl.elements.email.value = parsSaveInput.email || '';
   }
-
-  formData = parsSaveInput;
-
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 }
 
 // Ф-ція Сабміту
 function onSubmit(evt) {
   evt.preventDefault();
 
-  submitInput = {
-    Message: textareaEl.value,
-    Email: formEl.elements.email.value,
-  };
-  console.log(submitInput);
+  const saveInput = localStorage.getItem(STORAGE_KEY);
+
+  if (saveInput) {
+    const parsSaveInput = JSON.parse(saveInput);
+    console.log(parsSaveInput);
+  }
 
   localStorage.removeItem(STORAGE_KEY);
 
